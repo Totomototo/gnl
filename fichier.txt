@@ -1,0 +1,8 @@
+ligne 1
+ligne 2
+ligne 3
+
+ligne 5 (ligne vide avant)
+
+0123456789012345678901234567890123456789
+fin sans retour à la ligne
