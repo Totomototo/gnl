@@ -1,29 +1,24 @@
 #include "get_next_line.h"
 
-int found_newline(t_list *stash)
+int	found_newline(t_list *stash)
 {
-    int i;
+	int	i;
 
-    while (stash)
-    {
-        
-        i = 0;
-        while (stash->content[i])
-        {
-            if (stash->content[i] == '\n')
-            {
-          
-                return (1);
-            }
-            i++;
-        }
-        stash = stash->next;
-    }
-   
-    return (0);
+	while (stash)
+	{
+		i = 0;
+		while (stash->content[i])
+		{
+			if (stash->content[i] == '\n')
+			{
+				return (1);
+			}
+			i++;
+		}
+		stash = stash->next;
+	}
+	return (0);
 }
-
-
 
 t_list	*ft_lst_get_last(t_list *stash)
 {

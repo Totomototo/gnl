@@ -5,4 +5,4 @@ ligne 3
 ligne 5 (ligne vide avant)
 
 0123456789012345678901234567890123456789
-fin sans retour à la ligne
+fin sans retour a la ligne

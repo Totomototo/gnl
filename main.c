@@ -14,9 +14,9 @@ int	main(void)
        { 
         return(1);
        }
-	while ((line = get_next_line(fd)) != NULL)
+	while ((line = get_next_line(fd)) != NULL && i <= 10)
     {
-        printf("ligne %d : %s\n", i, line);
+        printf("ligne %d : %s", i, line);
 	    free(line);
         i++;
     }
