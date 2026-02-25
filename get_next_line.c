@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbenavid <tbenavid@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/25 17:47:20 by tbenavid          #+#    #+#             */
+/*   Updated: 2026/02/25 17:48:51 by tbenavid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*get_next_line(int fd)
@@ -16,8 +28,8 @@ char	*get_next_line(int fd)
 	if (stash == NULL)
 		return (NULL);
 	extract_line(stash, &line);
-	if(line == NULL)
-		return NULL;
+	if (line == NULL)
+		return (NULL);
 	clean_stash(&stash);
 	if (line[0] == '\0')
 	{
@@ -48,11 +60,6 @@ void	read_and_stash(int fd, t_list **stash)
 		}
 		buf[readed] = '\0';
 		add_to_stash(stash, buf, readed);
-		// if(!(*stash)->content)
-		// {
-		// 	*stash = NULL;
-		// 	return ;
-		// }
 		free(buf);
 	}
 }
