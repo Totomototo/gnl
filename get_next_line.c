@@ -6,12 +6,18 @@ char	*get_next_line(int fd)
 	char			*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
+	{
+		free_stash(stash);
+		stash = NULL;
+		line = NULL;
 		return (NULL);
-	line = NULL;
+	}
 	read_and_stash(fd, &stash);
 	if (stash == NULL)
 		return (NULL);
 	extract_line(stash, &line);
+	if(line == NULL)
+		return NULL;
 	clean_stash(&stash);
 	if (line[0] == '\0')
 	{
@@ -42,6 +48,11 @@ void	read_and_stash(int fd, t_list **stash)
 		}
 		buf[readed] = '\0';
 		add_to_stash(stash, buf, readed);
+		// if(!(*stash)->content)
+		// {
+		// 	*stash = NULL;
+		// 	return ;
+		// }
 		free(buf);
 	}
 }

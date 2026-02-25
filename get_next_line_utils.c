@@ -67,6 +67,7 @@ void	free_stash(t_list *stash)
 		free(current);
 		current = next;
 	}
+	stash = NULL;
 }
 
 int	ft_strlen(char *str)
@@ -74,7 +75,7 @@ int	ft_strlen(char *str)
 	int	len;
 
 	len = 0;
-	while (*(str++))
+	while (str[len])
 		len++;
 	return (len);
 }
